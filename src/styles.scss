@@ -1,8 +1,4 @@
-@tailwind components;
-@tailwind utilities;
-
-@import '../node_modules/primeng/resources/themes/lara-light-blue/theme.css';
-@import '../node_modules/primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
 
 @font-face {
   font-family: 'Poppins';
@@ -15,16 +11,15 @@ body {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  @apply bg-tech-primary;
 }
 
-/* Order */
-@layer reset, primeng;
+@layer tailwind-base, primeng, tailwind-utilities;
 
-/* Reset CSS */
-@layer reset {
-  button,
-  input {
-    /* CSS to Reset */
-  }
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
 }

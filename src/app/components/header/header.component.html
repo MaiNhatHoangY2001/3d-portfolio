@@ -1,0 +1,12 @@
+<p-toolbar styleClass="bg-tech-primary border-none">
+  <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" />
+
+  <div class="flex justify-between px-4">
+    <p-inputSwitch
+      class="mx-2 self-center"
+      [(ngModel)]="checked"
+      (onChange)="onThemeChange(checked ? 'dark' : 'light')"
+    ></p-inputSwitch>
+    <app-language-setting></app-language-setting>
+  </div>
+</p-toolbar>

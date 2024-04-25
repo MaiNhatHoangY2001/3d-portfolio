@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomeComponent } from './pages/home/home.component';
+import { ThemeService } from './services/theme.service';
 import { TranslationService } from './services/translation.service';
 
 @Component({
@@ -13,7 +14,11 @@ import { TranslationService } from './services/translation.service';
 })
 export class AppComponent {
   title = '3d-showcase';
-  constructor(translationService: TranslationService) {
+  constructor(translationService: TranslationService, private themService: ThemeService) {
     translationService.initLanguage();
+  }
+
+  get isDarkTheme() {
+    return this.themService.getTheme() === 'dark';
   }
 }
