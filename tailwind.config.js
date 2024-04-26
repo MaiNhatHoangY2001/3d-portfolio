@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
   content: ['./src/**/*.{html,ts}'],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {

@@ -1,0 +1,8 @@
+.card {
+  background: var(--surface-card);
+  @apply p-8 rounded-xl m-4;
+}
+
+.custom-marker {
+  @apply flex w-8 h-8 text-center justify-center text-white rounded-full z-10 shadow-xl;
+}
