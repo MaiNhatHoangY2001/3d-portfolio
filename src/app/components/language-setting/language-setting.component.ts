@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DropdownModule } from 'primeng/dropdown';
+import { DropdownChangeEvent, DropdownModule } from 'primeng/dropdown';
 import { TranslationService } from '../../services/translation.service';
 
 interface Language {
@@ -39,7 +39,7 @@ export class LanguageSettingComponent implements OnInit {
     this.selectedLang = optionLanguage;
   }
 
-  handleChangeLanguage(event: any): void {
+  handleChangeLanguage(event: DropdownChangeEvent): void {
     this.translationService.changeLanguage(event?.value?.value || 'en');
   }
 }
