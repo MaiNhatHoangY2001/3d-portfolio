@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { CanvasBoxComponent } from '../../components/canvas-box/canvas-box.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { LanguageSettingComponent } from '../../components/language-setting/language-setting.component';
 import { TimeLineComponent } from '../../components/time-line/time-line.component';
@@ -20,6 +21,7 @@ import { TimeLineComponent } from '../../components/time-line/time-line.componen
     TimeLineComponent,
     LanguageSettingComponent,
     ToolbarModule,
+    CanvasBoxComponent,
   ],
 })
 export class HomeComponent {}
