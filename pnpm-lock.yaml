@@ -66,7 +66,7 @@ importers:
         specifier: ^17.13.0
         version: 17.13.0(@angular/common@17.3.0(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3))(rxjs@7.8.1))(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3))(@angular/forms@17.3.0(@angular/common@17.3.0(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3))(rxjs@7.8.1))(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3))(@angular/platform-browser@17.3.0(@angular/animations@17.3.0(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3)))(@angular/common@17.3.0(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3))(rxjs@7.8.1))(@angular/core@17.3.0(rxjs@7.8.1)(zone.js@0.14.3)))(rxjs@7.8.1))(rxjs@7.8.1)(zone.js@0.14.3)
       rxjs:
-        specifier: ^6.5.3 || ^7.4.0
+        specifier: ^7.8.1
         version: 7.8.1
       three:
         specifier: ^0.163.0
