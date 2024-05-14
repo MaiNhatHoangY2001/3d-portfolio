@@ -6,13 +6,16 @@ import { PrimeNGConfig } from 'primeng/api';
   providedIn: 'root',
 })
 export class TranslationService {
-  constructor(private config: PrimeNGConfig,private translate: TranslateService) {}
+  constructor(
+    private config: PrimeNGConfig,
+    private translate: TranslateService,
+  ) {}
 
   initLanguage(): void {
     this.translate.addLangs(['en', 'vi']);
     this.translate.setDefaultLang('en');
     this.translate.use(this.getLanguage());
-    this.translate.get('primeng').subscribe(res => this.config.setTranslation(res))
+    this.translate.get('primeng').subscribe((res) => this.config.setTranslation(res));
   }
 
   changeLanguage(language: string): void {
@@ -20,7 +23,7 @@ export class TranslationService {
   }
 
   getLanguage(): string {
-    const browserLang = this.translate.getBrowserLang() || '';
-    return browserLang.match(/en|vi/) ? browserLang : 'en';
+    const browserLang = this.translate.getBrowserLang() ?? '';
+    return RegExp(/en|vi/).exec(browserLang) ? browserLang : 'en';
   }
 }
