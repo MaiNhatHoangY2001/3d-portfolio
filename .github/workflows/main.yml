@@ -20,7 +20,7 @@ jobs:
         pnpm install  # or npm install or yarn install depending on your project
 
     - name: Build Angular Project
-      run: ng build --prod --base-href=/3d-portfolio/
+      run: ng build --configuration production --base-href=/3d-portfolio/
 
     - name: Versioning
       run: |
