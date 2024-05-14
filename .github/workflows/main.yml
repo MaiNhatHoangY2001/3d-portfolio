@@ -27,11 +27,3 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/3d-showcase  # Update with your Angular project folder
-
-      - name: Delete old deployment
-        run: |
-          git checkout gh-pages
-          git rm -r .
-          git commit -m "Remove old deployment"
-          git push origin gh-pages --force
-          git checkout ${{ github.ref }}
