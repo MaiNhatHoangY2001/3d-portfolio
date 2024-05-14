@@ -16,6 +16,7 @@ jobs:
     - name: Install Dependencies
       run: |
         npm install -g @angular/cli
+        npm install -g pnpm
         pnpm install  # or npm install or yarn install depending on your project
 
     - name: Build Angular Project
