@@ -30,7 +30,6 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "angular-cli-ghpages": "2.0.0-beta.2",
     "@types/three": "^0.163.0",
-    "angular-cli-ghpages": "2.0.0-beta.2",
     "express": "^4.18.2",
     "husky": "^9.0.11",
     "pretty-quick": "^4.0.0",
