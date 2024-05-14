@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DropdownChangeEvent, DropdownModule } from 'primeng/dropdown';
@@ -5,16 +6,19 @@ import { TranslationService } from '../../services/translation.service';
 
 interface Language {
   value: string;
+  icon: string;
   label: string;
 }
 
 const LANGUAGES = [
   {
     value: 'en',
+    icon: 'great-britain.png',
     label: 'English',
   },
   {
     value: 'vi',
+    icon: 'vietnam.png',
     label: 'Vietnam',
   },
 ];
@@ -22,7 +26,7 @@ const LANGUAGES = [
 @Component({
   selector: 'app-language-setting',
   standalone: true,
-  imports: [DropdownModule, FormsModule],
+  imports: [DropdownModule, FormsModule, NgIf],
   templateUrl: './language-setting.component.html',
   styleUrl: './language-setting.component.scss',
 })
