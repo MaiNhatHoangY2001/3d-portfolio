@@ -3,39 +3,37 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or the branch you want to deploy from
-
+      - main  # Adjust as per your main branch name
+permissions:
+  contents: write
 jobs:
-  deploy:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Install dependencies 🔧
         run: |
-          npm install -g @angular/cli
+          npm ci
           npm install -g pnpm
-          pnpm install  # or npm install or yarn install depending on your project
+          pnpm install
 
-      - name: Build Angular Project
-        run: ng build --configuration production --base-href=/3d-portfolio/
+      - name: Build Angular project 🔧
+        run: ng build --configuration production --base-href /3d-portfolio/
 
-      - name: Delete Old Deployment
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/3d-showcase  # Update with your Angular project folder
+
+      - name: Delete old deployment
         run: |
-          git fetch --prune --unshallow
           git checkout gh-pages
-          git reset --hard origin/gh-pages # Discard any local changes and reset to remote state
-          git rm -r . # Delete all files in the gh-pages branch
-          git commit -m "Remove old deployment" || true # Commit even if there are no changes
-          git push origin gh-pages --force # Force push to update the gh-pages branch
-
-      - name: Deploy to GitHub Pages
-        run: |
-          git checkout main
-          git checkout -b deployment
-          git add dist/3d-showcase # Add the new deployment
-          git commit -m "Deploy version $(git describe --tags)" # Include version number in the commit message
-          git push origin deployment
-          git branch -D deployment
+          git rm -r .
+          git commit -m "Remove old deployment"
+          git push origin gh-pages --force
+          git checkout ${{ github.ref }}
