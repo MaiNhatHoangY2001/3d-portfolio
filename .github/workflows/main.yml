@@ -22,10 +22,6 @@ jobs:
     - name: Build Angular Project
       run: ng build --configuration production --base-href=/3d-portfolio/
 
-    - name: Versioning
-      run: |
-        npx standard-version --release-as patch --commit-all --no-verify
-
     - name: Delete Old Deployment
       run: |
         git fetch --prune --unshallow
@@ -39,6 +35,6 @@ jobs:
         git checkout main
         git checkout -b deployment
         git add dist/3d-showcase # Add the new deployment
-        git commit -m "Deploy version $(git describe --tags)" # Include version number in the commit message
+        git commit -m "Deploy to GitHub Pages"
         git push origin deployment
         git branch -D deployment
