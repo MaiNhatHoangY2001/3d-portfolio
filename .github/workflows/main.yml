@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust as per your main branch name
+      - main # Adjust as per your main branch name
 permissions:
   contents: write
 jobs:
@@ -14,16 +14,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install dependencies 🔧
-        run: |
-          npm install -g @angular/cli pnpm
-          pnpm install
-
-      - name: Build Angular project 🔧
-        run: ng build --configuration production --base-href /3d-portfolio/
+      - name: Build Angular app to prod 🔧
+        run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/3d-showcase  # Update with your Angular project folder
+          folder: dist/browser # Update with your Angular project folder
