@@ -1,9 +1,11 @@
 <app-header></app-header>
-<div class="text-center container mx-auto px-4">
+<div class="text-center container mx-auto px-4 layout-content">
   <div class="h-screen">
-    <h1 class="text-3xl font-bold">{{ 'HOME.TITLE' | translate }}</h1>
-    <p class="text-lg">{{ 'HOME.DESCRIPTION' | translate }}.</p>
-    <p-button label="{{ 'BUTTON.SUBMIT' | translate }}"></p-button>
+    <div class="text-center align-middle">
+      <h1 class="text-3xl font-bold">{{ 'HOME.TITLE' | translate }}</h1>
+      <p class="text-lg">{{ 'HOME.DESCRIPTION' | translate }}.</p>
+      <p-button label="{{ 'BUTTON.SUBMIT' | translate }}"></p-button>
+    </div>
   </div>
   <app-time-line class="h-screen"></app-time-line>
 </div>

@@ -16,7 +16,6 @@
   --doc-highlight-text-bg: var(--surface-200);
   --doc-highlight-text-color: var(--surface-700);
 }
-
 .layout-dark {
   --primary-color-default: var(--primary-400);
   --primary-color-inverse-default: var(--gray-900);
@@ -35,12 +34,7 @@
   --doc-highlight-text-bg: var(--surface-50);
   --doc-highlight-text-color: var(--surface-500);
 }
-
 .layout-wrapper {
-  background-color: var(--surface-ground);
-  background-image: var(--glow-image);
+  @apply bg-[color:var(--surface-ground)] bg-[image:var(--glow-image)] bg-[top_center] bg-no-repeat bg-[auto_20rem];
   background-blend-mode: var(--glow-blend);
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: auto 20rem;
 }

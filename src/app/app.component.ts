@@ -14,11 +14,14 @@ import { TranslationService } from './services/translation.service';
 })
 export class AppComponent {
   title = '3d-showcase';
-  constructor(translationService: TranslationService, private themService: ThemeService) {
+  constructor(
+    translationService: TranslationService,
+    private themService: ThemeService,
+  ) {
     translationService.initLanguage();
   }
 
   get isDarkTheme() {
-    return this.themService.getTheme() === 'dark';
+    return this.themService.getTheme();
   }
 }
