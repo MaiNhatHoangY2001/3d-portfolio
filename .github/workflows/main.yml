@@ -12,20 +12,32 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Install Dependencies
       run: |
-        npm install -g pnpm
-        pnpm install
+        npm install -g @angular/cli
+        pnpm install  # or npm install or yarn install depending on your project
 
-    - name: Deploy to GitHub Pages
+    - name: Build Angular Project
+      run: ng build --prod --base-href=/3d-portfolio/
+
+    - name: Versioning
       run: |
-        pnpm run build:git
+        npx standard-version --release-as patch --commit-all --no-verify
 
     - name: Delete Old Deployment
       run: |
         git fetch --prune --unshallow
-        git branch -D gh-pages || true
-        git push origin --delete gh-pages || true
+        git checkout gh-pages
+        git rm -r . # Delete all files in the gh-pages branch
+        git commit -m "Remove old deployment" || true # Commit even if there are no changes
+        git push origin gh-pages --force # Force push to update the gh-pages branch
+
+    - name: Deploy to GitHub Pages
+      run: |
+        git checkout main
+        git checkout -b deployment
+        git add dist/3d-showcase # Add the new deployment
+        git commit -m "Deploy version $(git describe --tags)" # Include version number in the commit message
+        git push origin deployment
+        git branch -D deployment
