@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Angular app to prod 🔧
-        run: npm install && npm run build:prod
+        run: npm install -g pnpm && pnpm install && pnpm run build:prod
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
