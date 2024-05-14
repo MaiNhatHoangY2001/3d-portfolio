@@ -3,39 +3,39 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Adjust this to your main branch
+      - main # Or the branch you want to deploy from
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: |
-        npm install -g @angular/cli
-        npm install -g pnpm
-        pnpm install  # or npm install or yarn install depending on your project
+      - name: Install Dependencies
+        run: |
+          npm install -g @angular/cli
+          npm install -g pnpm
+          pnpm install  # or npm install or yarn install depending on your project
 
-    - name: Build Angular Project
-      run: ng build --configuration production --base-href=/3d-portfolio/
+      - name: Build Angular Project
+        run: ng build --configuration production --base-href=/3d-portfolio/
 
-    - name: Delete Old Deployment
-      run: |
-        git fetch --prune --unshallow
-        git checkout gh-pages
-        git reset --hard origin/gh-pages # Discard any local changes and reset to remote state
-        git rm -r . # Delete all files in the gh-pages branch
-        git commit -m "Remove old deployment" || true # Commit even if there are no changes
-        git push origin gh-pages --force # Force push to update the gh-pages branch
+      - name: Delete Old Deployment
+        run: |
+          git fetch --prune --unshallow
+          git checkout gh-pages
+          git reset --hard origin/gh-pages # Discard any local changes and reset to remote state
+          git rm -r . # Delete all files in the gh-pages branch
+          git commit -m "Remove old deployment" || true # Commit even if there are no changes
+          git push origin gh-pages --force # Force push to update the gh-pages branch
 
-    - name: Deploy to GitHub Pages
-      run: |
-        git checkout main
-        git checkout -b deployment
-        git add dist/3d-showcase # Add the new deployment
-        git commit -m "Deploy version $(git describe --tags)" # Include version number in the commit message
-        git push origin deployment
-        git branch -D deployment
+      - name: Deploy to GitHub Pages
+        run: |
+          git checkout main
+          git checkout -b deployment
+          git add dist/3d-showcase # Add the new deployment
+          git commit -m "Deploy version $(git describe --tags)" # Include version number in the commit message
+          git push origin deployment
+          git branch -D deployment
