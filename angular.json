@@ -61,7 +61,7 @@
               ],
               "outputHashing": "all",
               "optimization": true,
-              "aot": true
+              "aot": false
             },
             "development": {
               "optimization": false,
