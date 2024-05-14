@@ -12,11 +12,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-
-    - name: Set up Git
-      run: |
-        git config --global user.email "hoan44pro@gmail.com"
-        git config --global user.name "MaiNhatHoangY2001"
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Install Dependencies
       run: |
