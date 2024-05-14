@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies 🔧
         run: |
-          npm install -g pnpm
+          npm install -g @angular/cli pnpm
           pnpm install
 
       - name: Build Angular project 🔧
