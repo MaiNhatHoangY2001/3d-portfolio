@@ -1,12 +1,13 @@
-<p-toolbar styleClass="bg-tech-primary border-none">
+<p-toolbar class="layout-topbar" styleClass="border-0">
   <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" alt="primeng.svg" />
 
   <div class="flex justify-between px-4">
-    <p-inputSwitch
-      class="mx-2 self-center"
-      [(ngModel)]="checked"
-      (onChange)="onThemeChange(checked ? 'dark' : 'light')"
-    ></p-inputSwitch>
+    <p-button
+      icon="pi {{ checked ? 'pi-moon' : 'pi-sun' }}"
+      class="self-center"
+      styleClass="h-11 w-11 mx-2"
+      (onClick)="onThemeChange(!checked)"
+    ></p-button>
     <app-language-setting></app-language-setting>
   </div>
 </p-toolbar>
