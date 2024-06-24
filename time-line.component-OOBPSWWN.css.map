@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/time-line/time-line.component.scss"],
+  "sourcesContent": [".card {\n  background: var(--surface-card);\n  @apply p-8 rounded-xl m-4;\n}\n\n.custom-marker {\n  @apply flex w-8 h-8 text-center justify-center text-white rounded-full z-10 shadow-xl;\n}\n"],
+  "mappings": "AAAA,CAAA,KACE,WAAA,IAAA,gBADF,OAEE,KAFF,cAEE,OAFF,QAEE,IACF,CAGE,CAAA,cAAA,QAAA,GAAA,QAAA,KAAA,OAAA,KAAA,MAAA,KAAA,gBAAA,OANF,cAME,OAAA,WAAA,OAAA,mBAAA,EAAA,MAAA,IAAA,IAAA,IAAA,IAAA,EAAA,IAAA,oBAAA,aAAA,EAAA,KAAA,KAAA,KAAA,IAAA,EAAA,EAAA,EAAA,EAAA,GAAA,EAAA,EAAA,IAAA,KAAA,KAAA,IAAA,EAAA,EAAA,EAAA,EAAA,IAAA,qBAAA,EAAA,KAAA,KAAA,KAAA,IAAA,kBAAA,EAAA,EAAA,IAAA,KAAA,KAAA,IAAA,mBAAA,WAAA,IAAA,uBAAA,EAAA,EAAA,EAAA,MAAA,CAAA,IAAA,gBAAA,EAAA,EAAA,EAAA,MAAA,CAAA,IAAA,YAAA",
+  "names": []
+}
