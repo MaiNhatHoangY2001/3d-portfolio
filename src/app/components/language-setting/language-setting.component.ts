@@ -1,8 +1,8 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslationService } from '@app/services/translation.service';
 import { DropdownChangeEvent, DropdownModule } from 'primeng/dropdown';
-import { TranslationService } from '../../services/translation.service';
 
 interface Language {
   value: string;
