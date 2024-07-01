@@ -22,31 +22,31 @@ export class LatestWorkComponent implements OnInit {
   products = [
     {
       name: 'Converse - Chat with AI',
-      img: '/assets/img/product-default.png',
+      img: 'assets/img/product-default.png',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita asperiores quis ad saepe esse eius quae praesentium qui unde cum.',
     },
     {
       name: 'Converse - Chat with AI',
-      img: '/assets/img/product-default.png',
+      img: 'assets/img/product-default.png',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita asperiores quis ad saepe esse eius quae praesentium qui unde cum.',
     },
     {
       name: 'Converse - Chat with AI',
-      img: '/assets/img/product-default.png',
+      img: 'assets/img/product-default.png',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita asperiores quis ad saepe esse eius quae praesentium qui unde cum.',
     },
     {
       name: 'Converse - Chat with AI',
-      img: '/assets/img/product-default.png',
+      img: 'assets/img/product-default.png',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita asperiores quis ad saepe esse eius quae praesentium qui unde cum.',
     },
     {
       name: 'Converse - Chat with AI',
-      img: '/assets/img/product-default.png',
+      img: 'assets/img/product-default.png',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita asperiores quis ad saepe esse eius quae praesentium qui unde cum.',
     },

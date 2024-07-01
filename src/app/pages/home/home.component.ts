@@ -30,9 +30,9 @@ import { ToolbarModule } from 'primeng/toolbar';
 })
 export class HomeComponent {
   listIcon = [
-    { alt: 'github', img: '/assets/img/github.png', link: 'https://github.com/MaiNhatHoangY2001' },
-    { alt: 'linked', img: '/assets/img/linked.png', link: '#' },
-    { alt: 'google', img: '/assets/img/google.png', link: '#' },
-    { alt: 'facebook', img: '/assets/img/facebook.png', link: '#' },
+    { alt: 'github', img: 'assets/img/github.png', link: 'https://github.com/MaiNhatHoangY2001' },
+    { alt: 'linked', img: 'assets/img/linked.png', link: '#' },
+    { alt: 'google', img: 'assets/img/google.png', link: '#' },
+    { alt: 'facebook', img: 'assets/img/facebook.png', link: '#' },
   ];
 }
